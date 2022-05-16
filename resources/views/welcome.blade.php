@@ -12,6 +12,7 @@
 
     <div>
         <a href="/about ">about</a>
+        <a href="articles ">articles</a>
     </div>
 
 </div>

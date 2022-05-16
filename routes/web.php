@@ -1,4 +1,5 @@
 <?php
+namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Route;
 
@@ -16,10 +17,24 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('about', function () {
-    return view('about');
-});
+//Route::get('about', function () {
+//    return view('about');
+//});
 Route::get('articles', function () {
-    $articles = App\Models\Article::all();
+    $articles = \App\Models\Article::all();
     return view('articles', ['articles' => $articles]);
 });
+
+Route::get('about', [PageController::class, 'about']);
+// app/HTTP/Controllers/PageController.php
+
+// Должен наследоваться от Controller
+class PageController extends Controller
+{
+    public function about()
+    {
+        // Точка используется вместо /.
+        // То есть шаблон находится по пути resources/views/page/about.blade.php
+        return view('page.about');
+    }
+}
