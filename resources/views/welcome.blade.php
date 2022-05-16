@@ -9,11 +9,11 @@
 </head>
 <body>
 <div class="container mt-4">
-    <!-- BEGIN (write your solution here) -->
+
     <div>
         <a href="/about ">about</a>
     </div>
-    <!-- END -->
+
 </div>
 </body>
 </html>
