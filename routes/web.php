@@ -20,10 +20,13 @@ Route::get('/', function () {
 //Route::get('about', function () {
 //    return view('about');
 //});
-Route::get('articles', function () {
-    $articles = \App\Models\Article::all();
-    return view('articles', ['articles' => $articles]);
-});
+//Route::get('articles', function () {
+//    $articles = \App\Models\Article::all();
+//    return view('articles', ['articles' => $articles]);
+//});
+
+Route::get('articles', [ArticleController::class, 'index'])
+    ->name('articles.index');
 
 Route::get('about', [PageController::class, 'about']);
 // app/HTTP/Controllers/PageController.php
